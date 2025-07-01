@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from config import create_app, db
 from flask_migrate import upgrade
 from auth.routes import auth_bp
@@ -11,15 +11,19 @@ app.static_folder = 'static'
 app.register_blueprint(auth_bp, url_prefix='/auth')
 app.register_blueprint(events_bp, url_prefix='/events')
 
+from flask import Flask, jsonify
+
+
 
 @app.route("/run-migrations")
 def run_migrations():
     try:
-        with app.app_context():  # Required on production
-            upgrade()
-        return "✅ Database migration successful"
+        upgrade()
+        return jsonify(message="✅ Database migration successful")
     except Exception as e:
-        return f"❌ Migration failed: {str(e)}"
+        print("Migration error:", e)  # log for Render logs
+        return jsonify(error=f"❌ Migration failed: {str(e)}"), 500
+
 
 # Home route
 @app.route("/")
