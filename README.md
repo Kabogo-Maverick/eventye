@@ -21,7 +21,12 @@ This is a full-stack event planning app that allows **admins** to create public 
 ---
 
 
-## TO CHECK ON THE ADMIN LOGINS AND OPERATIONS,AFTER SEEDING THE PASS IS user> "admin" pass> "adminpass"
+## TO CHECK ON THE ADMIN LOGINS AND OPERATIONS,AFTER SEEDING 
+THE PASS IS 
+```console
+user> "admin"
+ pass> "adminpass"
+ ```
 
 ## Clone the repo
 
