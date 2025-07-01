@@ -20,3 +20,5 @@ app.register_blueprint(events_bp, url_prefix='/events')
 # Optional table creation (ONLY if not using Flask-Migrate — not recommended)
 # with app.app_context():
 #     db.create_all()
+if __name__ == '__main__':    
+    app.run(debug=True)
