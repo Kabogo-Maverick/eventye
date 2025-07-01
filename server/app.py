@@ -18,7 +18,6 @@ app.register_blueprint(events_bp, url_prefix="/events")
 
 # CORS already handled inside config.py -> create_app()
 
-# Create tables
-with app.app_context():
-    db.create_all()
-    
+# # Create tables
+# with app.app_context():
+#     db.create_all()
