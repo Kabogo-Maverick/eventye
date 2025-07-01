@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+flask_session/
+migrations/
+*.sqlite3
+.env
+*.log
