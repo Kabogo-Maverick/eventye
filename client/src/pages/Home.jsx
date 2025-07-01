@@ -2,32 +2,36 @@ import { useEffect, useState } from 'react';
 import API from '../api';
 import EventForm from '../components/EventForm';
 import HeroSection from '../components/HeroSection';
-import Footer from '../components/Footer'; // ← Uncomment when Footer component is ready
-import '../styles/Home.css';
+import Footer from '../components/Footer'; // Uncomment when Footer component is ready
+import '../styles/Home.css'; // External CSS styles
 
 function Home({ user }) {
   const [events, setEvents] = useState([]);
 
+  // Fetch public admin-created events on load
   useEffect(() => {
     API.get('/events')
       .then(res => setEvents(res.data))
       .catch(() => alert("Failed to load events"));
   }, []);
 
+  // Admin creates a new public event
   const handleAdd = (newEvent) => {
-    setEvents((prev) => [newEvent, ...prev]);
+    setEvents(prev => [newEvent, ...prev]);
   };
 
+  // Admin deletes a public event
   const handleDelete = async (id) => {
     if (!confirm("Delete this event?")) return;
     try {
       await API.delete(`/events/${id}`);
-      setEvents(events.filter((e) => e.id !== id));
+      setEvents(events => events.filter(e => e.id !== id));
     } catch {
       alert("Failed to delete");
     }
   };
 
+  // User copies an event to "My Events"
   const handleAddToMine = async (id) => {
     try {
       await API.post(`/events/${id}/add-to-mine`);
@@ -42,7 +46,7 @@ function Home({ user }) {
       {/* 🌸 Hero Header Section */}
       <HeroSection />
 
-      {/* 🛠 Admin Event Creation */}
+      {/* 🛠 Admin: Event Creation */}
       {user?.is_admin && (
         <div className="create-section">
           <h3 style={{ color: "#c71585", fontFamily: "Playfair Display, serif" }}>
@@ -52,7 +56,7 @@ function Home({ user }) {
         </div>
       )}
 
-      {/* 📅 Public Events List */}
+      {/* 📅 Events Display */}
       <div className="events-list">
         {events.map((e) => (
           <div className="event-card" key={e.id}>
@@ -60,7 +64,9 @@ function Home({ user }) {
             <p><strong>Date:</strong> {e.date}</p>
             <p>{e.description}</p>
 
-            {e.image_url && <img src={e.image_url} alt={e.title} />}
+            {e.image_url && (
+              <img src={e.image_url} alt={e.title} />
+            )}
 
             <div className="button-group">
               {user?.is_admin ? (
@@ -73,7 +79,7 @@ function Home({ user }) {
         ))}
       </div>
 
-      {/* ⬇️ Optional Footer (uncomment when ready) */}
+      {/* ⬇️ Optional Footer */}
       <Footer />
     </div>
   );
