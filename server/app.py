@@ -21,3 +21,4 @@ app.register_blueprint(events_bp, url_prefix="/events")
 # Create tables
 with app.app_context():
     db.create_all()
+    

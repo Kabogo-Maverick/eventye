@@ -128,3 +128,21 @@ def add_to_my_events(id):
 #     db.session.commit()
 
 #     return jsonify(new_event.to_dict()), 201
+
+
+@events_bp.route("/<int:id>/remove-from-mine", methods=["POST"])
+def remove_from_my_events(id):
+    user_id = session.get("user_id")
+    if not user_id:
+        return {"error": "Unauthorized"}, 401
+
+    event = Event.query.get_or_404(id)
+
+    # ❗ Check if current user owns this event
+    if event.user_id != user_id:
+        return {"error": "Forbidden"}, 403
+
+    db.session.delete(event)
+    db.session.commit()
+
+    return jsonify({"message": "Event removed from your list"}), 200
