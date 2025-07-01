@@ -1,28 +1,36 @@
 # server/config.py
-import os
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_session import Session
 from flask_cors import CORS
-from flask_migrate import Migrate  # ✅ Add this
-from dotenv import load_dotenv
-load_dotenv()
 
 db = SQLAlchemy()
-migrate = Migrate()  # ✅ Add this
+sess = Session()
 
 def create_app():
     app = Flask(__name__)
 
-    app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "super-secret")
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+    # Base config
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'  # or PostgreSQL
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SESSION_TYPE'] = "filesystem"
-    app.config['SESSION_PERMANENT'] = False
-    app.config['SESSION_COOKIE_HTTPONLY'] = True
-    app.config['SESSION_COOKIE_SAMESITE'] = "Lax"
+    app.config['SECRET_KEY'] = 'super-secret-key'  # Make this stronger in prod
 
+    # ✅ Flask-Session config
+    app.config['SESSION_TYPE'] = 'filesystem'       # or 'sqlalchemy' for db sessions
+    app.config['SESSION_PERMANENT'] = False
+    app.config['SESSION_USE_SIGNER'] = True
+    app.config['SESSION_COOKIE_HTTPONLY'] = True
+
+    # ✅ IMPORTANT for production on Render (HTTPS)
+    app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+    app.config['SESSION_COOKIE_SECURE'] = True  # Needed for HTTPS
+
+    # Init extensions
     db.init_app(app)
-    migrate.init_app(app, db)  # ✅ Add this
+    sess.init_app(app)
+
+    # ✅ Enable CORS with credentials
     CORS(app, supports_credentials=True)
 
     return app
