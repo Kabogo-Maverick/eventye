@@ -1,0 +1,64 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@500;600&display=swap');
+
+.register-container {
+  max-width: 400px;
+  margin: 5rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(to bottom right, #fffafc, #fbeeff);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.25);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.register-container h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  color: #a1338a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.register-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1.3rem;
+  border: 1.5px solid #f8bbd0;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.register-container input:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.3);
+}
+
+.register-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-container button:hover {
+  background-color: #e754a3;
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(255, 105, 180, 0.3);
+}
+
+.register-container .error-message {
+  color: #d32f2f;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}

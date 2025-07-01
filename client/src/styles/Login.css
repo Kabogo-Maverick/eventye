@@ -1,0 +1,64 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@500;600&display=swap');
+
+.login-container {
+  max-width: 400px;
+  margin: 5rem auto;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(to bottom right, #fff0f5, #fdf5ff);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.3);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.login-container h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #b93160;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1.2rem;
+  border: 1.5px solid #f8bbd0;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.login-container input:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.3);
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-container button:hover {
+  background-color: #d94694;
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(255, 105, 180, 0.3);
+}
+
+.login-container .error-message {
+  color: #d32f2f;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}

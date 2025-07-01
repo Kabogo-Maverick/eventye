@@ -1,0 +1,91 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fff0f5;
+  color: #333;
+}
+
+/* Girlish Elegant Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #ffe6f0, #f9f0ff);
+  padding: 1.5rem 2.5rem;
+  border-bottom: 2px solid #fcd5ce;
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Links */
+.navbar a {
+  color: #b93160;
+  text-decoration: none;
+  margin: 0 14px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff69b4;
+  text-shadow: 0 0 2px #ffb6c1;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #ff69b4;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Admin Label */
+.admin-label {
+  color: #a3339d;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+/* Greeting */
+.user-greeting {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  margin: 0 14px;
+  color: #5a3d5c;
+  font-style: italic;
+}
+
+/* Buttons */
+.navbar button {
+  background-color: #ffb6c1;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: #ff69b4;
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.3);
+  transform: scale(1.05);
+}

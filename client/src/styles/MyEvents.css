@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@500;600&display=swap');
+
+.my-events-container {
+  padding: 3rem 2rem;
+  background: linear-gradient(to bottom right, #fff0f6, #fef8ff);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.my-events-container h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #b93160;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Form styling */
+.my-events-container form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  align-items: flex-end;
+}
+
+.my-events-container input {
+  flex: 1 1 220px;
+  padding: 10px 12px;
+  border: 1px solid #f9c7d9;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.my-events-container button {
+  padding: 10px 16px;
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.my-events-container button:hover {
+  background-color: #d94694;
+  transform: scale(1.05);
+}
+
+/* Event card */
+.event-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 30px rgba(255, 182, 193, 0.15);
+  transition: all 0.3s ease;
+}
+
+.event-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(255, 105, 180, 0.15);
+}
+
+.event-item h4 {
+  font-family: 'Playfair Display', serif;
+  color: #a8338a;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-item p {
+  margin: 0.3rem 0;
+  color: #444;
+}
+
+.event-item img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-top: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.edit-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.edit-inputs input {
+  flex: 1 1 220px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #fbcce0;
+}
+
+.event-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}

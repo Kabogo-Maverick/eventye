@@ -1,0 +1,51 @@
+.footer {
+    background: linear-gradient(to right, #fff0f6, #fef6ff);
+    padding: 2.5rem 1rem 1rem;
+    font-family: 'Quicksand', sans-serif;
+    color: #5e4b56;
+    text-align: center;
+    border-top: 1px solid #fcd6e6;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    color: #b93160;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .footer-links li a {
+    color: #b93160;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li a:hover {
+    color: #d94694;
+  }
+  
+  .footer-contact {
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
+    color: #7b6f74;
+  }
+  
+  .footer-bottom {
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    color: #a49b9f;
+  }
+  
