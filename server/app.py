@@ -11,11 +11,12 @@ app.static_folder = 'static'
 app.register_blueprint(auth_bp, url_prefix='/auth')
 app.register_blueprint(events_bp, url_prefix='/events')
 
-# Temporary migration route
+
 @app.route("/run-migrations")
 def run_migrations():
     try:
-        upgrade()
+        with app.app_context():  # Required on production
+            upgrade()
         return "✅ Database migration successful"
     except Exception as e:
         return f"❌ Migration failed: {str(e)}"
