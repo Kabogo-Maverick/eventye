@@ -22,14 +22,14 @@ with app.app_context():
             title="Public Launch",
             description="Launching our event portal",
             date="2025-07-01",
-            image_url="http://localhost:5000/static/ima1.jpeg",
+            image_url="https://eventye-20.onrender.com/static/ima1.jpeg",
             user_id=admin.id
         ),
         Event(
             title="User Meetup",
             description="Networking and games",
             date="2025-07-05",
-            image_url="http://localhost:5000/static/ima2.jpeg",
+            image_url="https://eventye-20.onrender.com/static/ima2.jpeg",
             user_id=user.id
         ),
     ]
