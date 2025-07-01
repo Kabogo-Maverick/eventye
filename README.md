@@ -1,22 +1,73 @@
-### ✅ MkayEvents API Auth Endpoints
+# 🗓️ Event Planner App (Flask + React)
 
-All requests use `http://localhost:5000`
+This is a full-stack event planning app that allows **admins** to create public events and **users** to manage their own personal event list. Users can duplicate public events to their own calendar, make reservations, and manage personal entries.
 
-- **POST /auth/register**
-    - Body: `{ "username": "testuser", "password": "pass123" }`
-    - Response: `{ "id": 1, "username": "testuser" }`
-    - Sets session cookie
+---
 
-- **POST /auth/login**
-    - Body: `{ "username": "testuser", "password": "pass123" }`
-    - Response: `{ "id": 1, "username": "testuser" }`
-    - Sets session cookie
+## 📦 Features
 
-- **GET /auth/check_session**
-    - Requires session cookie
-    - Response: `{ "id": 1, "username": "testuser" }` if logged in
-    - Else: `{ "error": "Unauthorized" }`
+### 👥 User
+- Register and login securely
+- View public events
+- Duplicate public events to "My Events"
+- Delete their own copied events
+- Reserve a seat for any event
 
-- **POST /auth/logout**
-    - Clears session
-    - Response: `{ "message": "Logged out" }`
+### 👑 Admin
+- Login with special credentials
+- Create, update, and delete events
+- Manage global public events
+
+---
+
+## Clone the repo
+
+```bash
+git clone https://github.com/Kabogo-Maverick/mvents.git
+cd mvents/server
+```
+
+## Create and activate virtual environment
+```console
+python -m venv venv
+source venv/bin/activate
+```
+
+
+
+## Install Dependencies
+```console
+pip install -r requirements.txt
+```
+
+# Run Flask
+```console
+flask run
+```
+
+## 🌐 Frontend (React)
+Navigate to frontend
+```console
+cd ../client
+```
+
+## Install dependencies
+```console
+npm install
+```
+## Start the frontend dev server
+```console
+npm run dev
+
+Default frontend runs on: http://localhost:5173
+
+```
+## 🛠 Tech Stack
+
+Frontend: React, Axios, Vite
+
+Backend: Flask, Flask-SQLAlchemy, Flask-CORS, Werkzeug
+
+Database: SQLite (default), easily swappable with PostgreSQL
+
+## Currently working on redeploying with render
