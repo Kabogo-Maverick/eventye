@@ -49,6 +49,7 @@ pip install -r requirements.txt
 ```
 
 # Run Flask
+in ther server;
 ```console
 flask run
 ```
